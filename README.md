@@ -85,12 +85,12 @@ Access the webui at `<your-ip>:7443`, for more information check out [evilginx2]
 To build a container for ARM-based systems:
 
 ```bash
+git clone https://github.com/l50/docker-evilginx2.git
+cd docker-evilginx2
+
 GITHUB_USERNAME=l50
 IMAGE_TAG=docker-evilginx2
 VERSION=latest
-
-git clone https://github.com/l50/docker-evilginx2.git
-cd docker-evilginx2
 
 docker build \
   --no-cache \
