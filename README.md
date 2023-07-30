@@ -13,7 +13,9 @@
 ## Usage
 
 ```bash
-docker run -it --rm -v $PWD/../evilginx2/phishlets:/phishlets l50/evilginx2:latest
+GITHUB_USERNAME=l50
+IMAGE_TAG=docker-evilginx2:latest
+docker run -it --rm -v $PWD/phishlets:/phishlets ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG
 ```
 
 Here are some example snippets to help you get started creating a container.
@@ -82,21 +84,29 @@ Access the webui at `<your-ip>:7443`, for more information check out [evilginx2]
 
 If you want to make local modifications to these images for development purposes or just to customize the logic:
 ```
+GITHUB_USERNAME=l50
+IMAGE_TAG=docker-evilginx2:latest
+
 git clone https://github.com/l50/docker-evilginx2.git
 cd docker-evilginx2
+
 docker build \
   --no-cache \
   --platform=linux/arm64/v8 \
   --pull \
-  -t l50/evilginx2:latest .
+  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:latest .
 ```
 
 ```
+GITHUB_USERNAME=l50
+IMAGE_TAG=docker-evilginx2:latest
+
 git clone https://github.com/l50/docker-evilginx2.git
 cd docker-evilginx2
+
 docker build \
   --platform=linux/arm64/v8 \
-  -t l50/evilginx2:latest .
+  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:latest .
 ```
 
 ## Versions
