@@ -82,10 +82,12 @@ Access the webui at `<your-ip>:7443`, for more information check out [evilginx2]
 
 ## Building locally
 
-If you want to make local modifications to these images for development purposes or just to customize the logic:
-```
+To build a container for ARM-based systems:
+
+```bash
 GITHUB_USERNAME=l50
-IMAGE_TAG=docker-evilginx2:latest
+IMAGE_TAG=docker-evilginx2
+VERSION=latest
 
 git clone https://github.com/l50/docker-evilginx2.git
 cd docker-evilginx2
@@ -94,19 +96,23 @@ docker build \
   --no-cache \
   --platform=linux/arm64/v8 \
   --pull \
-  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:latest .
+  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:$VERSION .
 ```
 
-```
+To build a container for intel-based systems:
+
+```bash
 GITHUB_USERNAME=l50
-IMAGE_TAG=docker-evilginx2:latest
+IMAGE_TAG=docker-evilginx2
+VERSION=latest
 
 git clone https://github.com/l50/docker-evilginx2.git
 cd docker-evilginx2
 
 docker build \
-  --platform=linux/arm64/v8 \
-  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:latest .
+  --no-cache \
+  --pull \
+  -t ghcr.io/$GITHUB_USERNAME/$IMAGE_TAG:$VERSION .
 ```
 
 ## Versions
